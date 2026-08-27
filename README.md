@@ -44,7 +44,7 @@ python train_uci.py            # PReLU baseline
 python train_uci_relu.py        #  ReLU baseline
 ```
 
-**3. Check training stability across random seeds** (optional but recommended):
+**3. Check training stability across random seeds** (optional):
 ```bash
 python train_uci_seeds.py --seed 123
 python train_uci_seeds.py --seed 7
