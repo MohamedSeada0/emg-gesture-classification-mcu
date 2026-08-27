@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate paper-ready accuracy and confusion-matrix figures from live UCI results."""
+"""Generate  accuracy and confusion-matrix figures from live UCI results."""
 
 from __future__ import annotations
 
