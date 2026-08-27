@@ -87,7 +87,7 @@ Figures are saved to `results/figures/`.
 | INT8 static (ReLU variant) | Full network | 78.03% | 111.60 | 71.6% | 41.02 |
 
 
-![Accuracy vs. model size trade-off](results/figures/accuracy_vs_size_tradeoff.png)
+![Accuracy vs. model size trade-off](results/figures/accuracy_vs_size_tradeoff .png)
 
 ![Model storage size and peak activation memory comparison](<results/figures/Comparison_of_model_storage_size_and_peak_activation_memory.png>)
 
