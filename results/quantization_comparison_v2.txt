@@ -1,0 +1,6 @@
+Model | Test Accuracy | Model Size (KB) | Peak Activation Memory (KB)
+--- | ---: | ---: | ---:
+FP32-PReLU | 0.7999 | 392.78 | 354.62
+FP32-ReLU | 0.7861 | 392.75 | 354.62
+INT8-dynamic | 0.8006 | 136.60 | 355.02
+INT8-static-ReLU | 0.7852 | 111.60 | 41.02

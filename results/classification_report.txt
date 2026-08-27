@@ -1,0 +1,13 @@
+              precision    recall  f1-score   support
+
+        Rest     0.6106    0.9568    0.7455       926
+        Fist     0.8172    0.6784    0.7413      8006
+  Wrist Flex     0.8323    0.8474    0.8398      8413
+   Wrist Ext     0.7283    0.8700    0.7928      8097
+  Radial Dev     0.8189    0.7507    0.7833      7941
+   Ulnar Dev     0.8520    0.8292    0.8404      8595
+
+    accuracy                         0.7999     41978
+   macro avg     0.7766    0.8221    0.7905     41978
+weighted avg     0.8060    0.7999    0.7993     41978
+

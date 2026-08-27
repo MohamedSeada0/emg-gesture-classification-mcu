@@ -1,0 +1,6 @@
+train_windows: 177199 windows
+class_distribution: {0: 4056, 1: 33572, 2: 34578, 3: 35051, 4: 35103, 5: 34839}
+val_windows: 36420 windows
+class_distribution: {0: 801, 1: 7065, 2: 6907, 3: 7167, 4: 7308, 5: 7172}
+test_windows: 41978 windows
+class_distribution: {0: 926, 1: 8006, 2: 8413, 3: 8097, 4: 7941, 5: 8595}

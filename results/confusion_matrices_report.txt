@@ -1,0 +1,35 @@
+FP32 Baseline
+accuracy=0.79989518
+f1_macro=0.79053390
+labels=0:Rest, 1:Fist, 2:Wrist Flex, 3:Wrist Ext, 4:Radial Dev, 5:Ulnar Dev
+confusion_matrix:
+[[ 886   35    0    0    4    1]
+ [ 156 5431  967  865  532   55]
+ [ 147  365 7129    0   45  727]
+ [   0   20   38 7044  730  265]
+ [ 262    7   92 1429 5961  190]
+ [   0  788  339  334    7 7127]]
+
+int8_dynamic
+accuracy=0.80056220
+f1_macro=0.79132075
+labels=0:Rest, 1:Fist, 2:Wrist Flex, 3:Wrist Ext, 4:Radial Dev, 5:Ulnar Dev
+confusion_matrix:
+[[ 884   37    0    0    4    1]
+ [ 156 5438  969  868  522   53]
+ [ 147  359 7128    0   49  730]
+ [   0   22   36 7052  708  279]
+ [ 253    7   92 1427 5953  209]
+ [   0  788  343  306    7 7151]]
+
+int8_static
+accuracy=0.78028968
+f1_macro=0.77071456
+labels=0:Rest, 1:Fist, 2:Wrist Flex, 3:Wrist Ext, 4:Radial Dev, 5:Ulnar Dev
+confusion_matrix:
+[[ 873   48    1    0    3    1]
+ [ 232 5461  969  759  509   76]
+ [ 140  371 7072    0   37  793]
+ [   0   46  135 5936 1692  288]
+ [ 247   17  127  891 6503  156]
+ [   0  734  710  230   11 6910]]

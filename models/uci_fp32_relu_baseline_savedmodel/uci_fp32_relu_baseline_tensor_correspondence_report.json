@@ -1,0 +1,586 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "total_onnx_node_outputs": 15,
+    "direct_count": 7,
+    "rewritten_count": 6,
+    "inferred_count": 0,
+    "missing_count": 2,
+    "rewritten_but_missing_count": 0,
+    "lineage_event_count": 23
+  },
+  "lineage_events": [
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "input_0_onnx_ncx_internal",
+        "input_0_onnx_ncx_internal_perm",
+        "conv1_1.weight",
+        "conv1_1.bias",
+        "conv2_1.weight",
+        "conv2_1.bias",
+        "conv3.weight",
+        "conv3.bias",
+        "_v_33",
+        "fc1.weight",
+        "fc1.bias",
+        "fc2.weight",
+        "fc2.bias",
+        "fc3.weight",
+        "fc3.bias",
+        "node_Conv_25_input_nhwc",
+        "max_pool2d",
+        "max_pool2d_perm",
+        "node_Conv_26_input_nhwc",
+        "max_pool2d_1",
+        "max_pool2d_1_perm",
+        "node_Conv_27_input_nhwc"
+      ],
+      "event_index": 0
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 1
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem",
+      "dst_name": "node_Conv_25_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 2
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "relu",
+      "new_name": "node_max_pool2d_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 3
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_3",
+      "dst_name": "node_Conv_26_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 4
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "relu_1",
+      "new_name": "node_max_pool2d_1_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 5
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_6",
+      "dst_name": "node_Conv_27_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 6
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "relu_2",
+      "new_name": "node_max_pool2d_2_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 7
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "getitem",
+        "getitem_perm",
+        "relu",
+        "node_max_pool2d_input_nhwc_perm",
+        "getitem_3",
+        "getitem_3_perm",
+        "relu_1",
+        "node_max_pool2d_1_input_nhwc_perm",
+        "getitem_6",
+        "getitem_6_perm",
+        "relu_2",
+        "node_max_pool2d_2_input_nhwc_perm"
+      ],
+      "event_index": 8
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 9
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 10
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 11
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_25_output_nhwc",
+      "new_name": "node_max_pool2d_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 12
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU",
+      "fused_activation": "RELU",
+      "conv_output": "node_Conv_25_output_nhwc",
+      "fused_output": "node_max_pool2d_input_nhwc",
+      "event_index": 13
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_26_output_nhwc",
+      "new_name": "node_max_pool2d_1_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 14
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU",
+      "fused_activation": "RELU",
+      "conv_output": "node_Conv_26_output_nhwc",
+      "fused_output": "node_max_pool2d_1_input_nhwc",
+      "event_index": 15
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_27_output_nhwc",
+      "new_name": "node_max_pool2d_2_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 16
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU",
+      "fused_activation": "RELU",
+      "conv_output": "node_Conv_27_output_nhwc",
+      "fused_output": "node_max_pool2d_2_input_nhwc",
+      "event_index": 17
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "node_Conv_25_output_nhwc",
+        "node_Conv_26_output_nhwc",
+        "node_Conv_27_output_nhwc"
+      ],
+      "event_index": 18
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 19
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 20
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 21
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 22
+    }
+  ],
+  "records": [
+    {
+      "identifier": 1,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_25",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem",
+      "resolved_tflite_tensor_name": "node_max_pool2d_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 11,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 2,
+          "kind": "replace_input",
+          "from": "getitem",
+          "to": "node_Conv_25_output_nhwc"
+        },
+        {
+          "event_index": 12,
+          "kind": "rename_tensor",
+          "from": "node_Conv_25_output_nhwc",
+          "to": "node_max_pool2d_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem",
+        "node_Conv_25_output_nhwc",
+        "node_max_pool2d_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 2,
+      "onnx_op_type": "Relu",
+      "onnx_op_name": "node_relu",
+      "onnx_output_index": 0,
+      "onnx_output_name": "relu",
+      "resolved_tflite_tensor_name": "node_max_pool2d_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 11,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 3,
+          "kind": "rename_tensor",
+          "from": "relu",
+          "to": "node_max_pool2d_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "relu",
+        "node_max_pool2d_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 3,
+      "onnx_op_type": "MaxPool",
+      "onnx_op_name": "node_max_pool2d",
+      "onnx_output_index": 0,
+      "onnx_output_name": "max_pool2d",
+      "resolved_tflite_tensor_name": "max_pool2d",
+      "exists_in_final_model": false,
+      "is_graph_output": false,
+      "consumer_count": 0,
+      "producer_operator_index": null,
+      "producer_op_type": null,
+      "assume_channel_last_layout": false,
+      "status": "missing",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "max_pool2d"
+      ]
+    },
+    {
+      "identifier": 4,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_26",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_3",
+      "resolved_tflite_tensor_name": "node_max_pool2d_1_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 24,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 4,
+          "kind": "replace_input",
+          "from": "getitem_3",
+          "to": "node_Conv_26_output_nhwc"
+        },
+        {
+          "event_index": 14,
+          "kind": "rename_tensor",
+          "from": "node_Conv_26_output_nhwc",
+          "to": "node_max_pool2d_1_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_3",
+        "node_Conv_26_output_nhwc",
+        "node_max_pool2d_1_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 5,
+      "onnx_op_type": "Relu",
+      "onnx_op_name": "node_relu_1",
+      "onnx_output_index": 0,
+      "onnx_output_name": "relu_1",
+      "resolved_tflite_tensor_name": "node_max_pool2d_1_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 24,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 5,
+          "kind": "rename_tensor",
+          "from": "relu_1",
+          "to": "node_max_pool2d_1_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "relu_1",
+        "node_max_pool2d_1_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 6,
+      "onnx_op_type": "MaxPool",
+      "onnx_op_name": "node_max_pool2d_1",
+      "onnx_output_index": 0,
+      "onnx_output_name": "max_pool2d_1",
+      "resolved_tflite_tensor_name": "max_pool2d_1",
+      "exists_in_final_model": false,
+      "is_graph_output": false,
+      "consumer_count": 0,
+      "producer_operator_index": null,
+      "producer_op_type": null,
+      "assume_channel_last_layout": false,
+      "status": "missing",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "max_pool2d_1"
+      ]
+    },
+    {
+      "identifier": 7,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_27",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_6",
+      "resolved_tflite_tensor_name": "node_max_pool2d_2_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 37,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 6,
+          "kind": "replace_input",
+          "from": "getitem_6",
+          "to": "node_Conv_27_output_nhwc"
+        },
+        {
+          "event_index": 16,
+          "kind": "rename_tensor",
+          "from": "node_Conv_27_output_nhwc",
+          "to": "node_max_pool2d_2_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_6",
+        "node_Conv_27_output_nhwc",
+        "node_max_pool2d_2_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 8,
+      "onnx_op_type": "Relu",
+      "onnx_op_name": "node_relu_2",
+      "onnx_output_index": 0,
+      "onnx_output_name": "relu_2",
+      "resolved_tflite_tensor_name": "node_max_pool2d_2_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 37,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 7,
+          "kind": "rename_tensor",
+          "from": "relu_2",
+          "to": "node_max_pool2d_2_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "relu_2",
+        "node_max_pool2d_2_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 9,
+      "onnx_op_type": "MaxPool",
+      "onnx_op_name": "node_max_pool2d_2",
+      "onnx_output_index": 0,
+      "onnx_output_name": "max_pool2d_2",
+      "resolved_tflite_tensor_name": "max_pool2d_2",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 39,
+      "producer_op_type": "TRANSPOSE",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "max_pool2d_2"
+      ]
+    },
+    {
+      "identifier": 10,
+      "onnx_op_type": "Reshape",
+      "onnx_op_name": "node_view",
+      "onnx_output_index": 0,
+      "onnx_output_name": "view",
+      "resolved_tflite_tensor_name": "view",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 40,
+      "producer_op_type": "RESHAPE",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "view"
+      ]
+    },
+    {
+      "identifier": 11,
+      "onnx_op_type": "Gemm",
+      "onnx_op_name": "node_linear",
+      "onnx_output_index": 0,
+      "onnx_output_name": "linear",
+      "resolved_tflite_tensor_name": "linear",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 41,
+      "producer_op_type": "FULLY_CONNECTED",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "linear"
+      ]
+    },
+    {
+      "identifier": 12,
+      "onnx_op_type": "Relu",
+      "onnx_op_name": "node_relu_3",
+      "onnx_output_index": 0,
+      "onnx_output_name": "relu_3",
+      "resolved_tflite_tensor_name": "relu_3",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 42,
+      "producer_op_type": "RELU",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "relu_3"
+      ]
+    },
+    {
+      "identifier": 13,
+      "onnx_op_type": "Gemm",
+      "onnx_op_name": "node_linear_1",
+      "onnx_output_index": 0,
+      "onnx_output_name": "linear_1",
+      "resolved_tflite_tensor_name": "linear_1",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 43,
+      "producer_op_type": "FULLY_CONNECTED",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "linear_1"
+      ]
+    },
+    {
+      "identifier": 14,
+      "onnx_op_type": "Relu",
+      "onnx_op_name": "node_relu_4",
+      "onnx_output_index": 0,
+      "onnx_output_name": "relu_4",
+      "resolved_tflite_tensor_name": "relu_4",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 44,
+      "producer_op_type": "RELU",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "relu_4"
+      ]
+    },
+    {
+      "identifier": 15,
+      "onnx_op_type": "Gemm",
+      "onnx_op_name": "node_linear_2",
+      "onnx_output_index": 0,
+      "onnx_output_name": "output_0",
+      "resolved_tflite_tensor_name": "output_0",
+      "exists_in_final_model": true,
+      "is_graph_output": true,
+      "consumer_count": 0,
+      "producer_operator_index": 45,
+      "producer_op_type": "FULLY_CONNECTED",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "output_0"
+      ]
+    }
+  ]
+}
