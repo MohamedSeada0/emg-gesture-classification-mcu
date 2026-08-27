@@ -53,8 +53,8 @@ Results are appended to `results/seed_results.txt`.
 
 **4. Apply post-training INT8 quantization:**
 ```bash
-python quantize_int8.py         # Dynamic INT8 (PReLU model) + static INT8 (PReLU->ReLU transplant)
-python quantize_int8_v2.py      # Static INT8 built from the matched ReLU baseline 
+python quantize_int8.py         # Dynamic INT8 (PReLU model) + static INT8 
+python quantize_int8_v2.py      # Static INT8 built from the ReLU baseline 
 ```
 
 **5. Generate evaluation reports:**
@@ -87,9 +87,9 @@ Figures are saved to `results/figures/`.
 | INT8 static (ReLU variant) | Full network | 78.03% | 111.60 | 71.6% | 41.02 |
 
 
-![Accuracy vs. model size trade-off](results/figures/accuracy_vs_size_tradeoff.png)
+![Accuracy vs. model size trade-off](results/figures/accuracy_vs_size_tradeoff .png)
 
-![Model storage size and peak activation memory comparison](<results/figures/Comparison_of model_storage_size_and_peak_activation_memory.png>)
+![Model storage size and peak activation memory comparison](<results/figures/Comparison_of_model_storage_size_and_peak_activation_memory.png>)
 
 ### Per-Class Performance
 
